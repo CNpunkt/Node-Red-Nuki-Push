@@ -9,7 +9,8 @@ The flow uses the Nuki Bridge API to get the trigger for the changed state and a
 ## Requirements
  - Nuki Smart Lock
  - Nuki Bridge
- - Enabled Nuki Bridge HTTP API (see steps below)
+ - Activated Nuki Bridge HTTP API (see steps below)
+ - Activated Nuki Web HTTP API (see steps below)
 
 
 
