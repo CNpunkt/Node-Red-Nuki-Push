@@ -71,4 +71,4 @@ The HTTP endpoint will be triggered as soon as the state of the Nuki Smart Lock 
 
 ![stars](https://img.shields.io/github/stars/CNpunkt/Node-Red-Nuki-Push?style=social)
 ![watchers](https://img.shields.io/github/watchers/CNpunkt/Node-Red-Nuki-Push?style=social)
-![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2FCNpunkt%2FNode-Red-Nuki-Push)
+[![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2FCNpunkt%2FNode-Red-Nuki-Push)](https://twitter.com/intent/tweet?text=https%3A%2F%2Fgithub.com%2FCNpunkt%2FNode-Red-Nuki-Push)
