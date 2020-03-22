@@ -36,7 +36,7 @@ The HTTP endpoint will be triggered as soon as the state of the Nuki Smart Lock 
 3. Send the get-request using the previous URL to the Nuki Bridge. The response should look like this:
 <img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Callback%20registered.png">
 
-4. (Optional) Check the registered callbacks by sending a request to the Nuki Bridge by using the following URL: http://**Nuki Bridge IP address**:**Port**/callback/list?token=**API token**
+4. (Optional) Check the registered callbacks by sending a request to the Nuki Bridge using the following URL: http://**Nuki Bridge IP address**:**Port**/callback/list?token=**API token**
 <img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Callback%20list.png">
 
 
@@ -57,11 +57,13 @@ The HTTP endpoint will be triggered as soon as the state of the Nuki Smart Lock 
 
 
 ### Configure the Node-RED flow
-1. The following node will be triggered by the Nuki Bridge using the previously registered callback when the Nuki Smart Lock state changes.
+1. Copy the [flow](https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/flow.json) to your Node-RED instance
+
+2. The following node will be triggered by the Nuki Bridge using the previously registered callback when the Nuki Smart Lock state changes.
 <img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Triggered%20node.png">
 <img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Endpoint%20node%20config.png">
 
-2. Store the smartlockId and the Web API token in the credentials node. The node forwards these informations to the HTTP request node which requests the Nuki Smart Lock state from the Web API.
+3. Store the smartlockId and the Web API token in the credentials node. The node forwards these informations to the HTTP request node which requests the Nuki Smart Lock state from the Web API.
 <img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Credentials%20node.png">
 <img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Credentials%20node%20config.png">
 
