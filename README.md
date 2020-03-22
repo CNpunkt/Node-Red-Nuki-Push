@@ -9,12 +9,12 @@ The flow uses the Nuki Bridge API to get the trigger for the changed state and a
 ## Requirements
  - Nuki Smart Lock
  - Nuki Bridge
- - Enabled the Nuki Bridge HTTP API (see steps below)
+ - Enabled Nuki Bridge HTTP API (see steps below)
 
 
 
 ## Configuration
-### Enable Nuki Bridge HTTP API
+### Enable the Nuki Bridge HTTP API
 1. Open the Nuki Bridge configuration in the Nuki App on your smartphone
 <img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Open%20Nuki%20Bride%20configuration.png" width="300"> 
 
@@ -58,10 +58,13 @@ The HTTP endpoint will be triggered as soon as the state of the Nuki Smart Lock 
 
 ### Configure the Node-RED flow
 1. The following node will be triggered by the Nuki Bridge using the previously registered callback when the Nuki Smart Lock state changes.
-
-![Triggered node](https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Triggered%20node.png "Triggered node")
+![Triggered node][Triggered node]
 ![Endpoint node config](https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Endpoint%20node%20config.png "Endpoint node config")
 
 2. Store the smartlockId and the Web API token in the credentials node. The node forwards these informations to the HTTP request node which requests the Nuki Smart Lock state from the Web API.
 ![Credentials node](https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Credentials%20node.png "Credentials node")
 ![Credentials node config](https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Credentials%20node%20config.png "Credentials node config")
+
+
+
+[Triggered node]: https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Triggered%20node.png "Triggered node"
