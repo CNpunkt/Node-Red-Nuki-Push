@@ -29,7 +29,7 @@ The flow uses the Nuki Bridge API to get the trigger for the changed state and a
 ### Register a callback HTTP endpoint in the Nuki Bridge
 The HTTP endpoint will be triggered as soon as the state of the Nuki Smart Lock changes. With the following steps a Node-RED HTTP endpoint will be registered in the Nuki Bridge.
 
-1. Download any prefered tool for sending a HTTP request, for example [Postman](https://www.postman.com/)
+1. Download any preferred tool for sending a HTTP request, for example [Postman](https://www.postman.com/)
 
 2. Build the URL for the request using the informations of step 2 (see above) to register the callback endpoint in the Nuki Bridge:
  - http://**Nuki Bridge IP address**:**Port**/callback/add?url=http%3A%2F%2F**Node-RED IP address**%2Fnuki&token=**API token**
