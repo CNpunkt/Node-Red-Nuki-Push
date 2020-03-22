@@ -33,11 +33,10 @@ The HTTP endpoint will be triggered as soon as the state of the Nuki Smart Lock 
  - Example: http://**192.168.178.208**:**8080**/callback/add?url=http%3A%2F%2F**192.168.178.202**%2Fnuki&token=**4711**
 
 3. Send the get-request using the previous URL to the Nuki Bridge. The response should look like this:
-![Callback registered](https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Callback%20registered.png "Callback registered")
+<img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Callback%20registered.png">
 
 4. (Optional) Check the registered callbacks by sending a request to the Nuki Bridge by using the following URL: http://**Nuki Bridge IP address**:**Port**/callback/list?token=**API token**
-
-![Callback list](https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Callback%20list.png "Callback list")
+<img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Callback%20list.png">
 
 
 
@@ -45,22 +44,23 @@ The HTTP endpoint will be triggered as soon as the state of the Nuki Smart Lock 
 1. Open [https://web.nuki.io/](https://web.nuki.io/) and create an account
 
 2. Open the API section on the website and create a new API token
-![Generate Web API Token](https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Generate%20Web%20API%20Token.png "Generate Web API Token")
-![Generate Web API Token2](https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Generate%20Web%20API%20Token2.png "Generate Web API Token2")
+<img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Generate%20Web%20API%20Token.png">
+<img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Generate%20Web%20API%20Token2.png">
 
 3. Send a HTTP get-request to the Nuki Web API, for example by using postman, to get the Nuki Smart Lock ID (use the previously generated Web API token). URL for the request: https://api.nuki.io/smartlock
-![HTTP Request Web API Smartlocks](https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/HTTP%20Request%20Web%20API%20get%20Smartlocks.png "HTTP Request Web API Smartlocks")
+<img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/HTTP%20Request%20Web%20API%20get%20Smartlocks.png">
 
 4. Remember the smartlockId for later use:
-![HTTP Request Web API smartlockId](https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/HTTP%20Request%20Web%20API%20smartlockID.png "HTTP Request Web API smartlockId")
+<img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/HTTP%20Request%20Web%20API%20smartlockID.png">
 
 
 
 ### Configure the Node-RED flow
 1. The following node will be triggered by the Nuki Bridge using the previously registered callback when the Nuki Smart Lock state changes.
 <img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Triggered%20node.png">
-![Endpoint node config](https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Endpoint%20node%20config.png "Endpoint node config")
+<img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Endpoint%20node%20config.png">
 
 2. Store the smartlockId and the Web API token in the credentials node. The node forwards these informations to the HTTP request node which requests the Nuki Smart Lock state from the Web API.
-![Credentials node](https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Credentials%20node.png "Credentials node")
-![Credentials node config](https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Credentials%20node%20config.png "Credentials node config")
+<img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Credentials%20node.png">
+<img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Credentials%20node%20config.png">
+
