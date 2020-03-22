@@ -1,8 +1,10 @@
 {
     "name": "Node-Red-Nuki-Push",
-    "description": "Nuki push state changes to Node Red",
+    "description": "Nuki Smart Lock - Push state changes to Node Red",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "node-red-contrib-credentials": "0.2.1"
+    },
     "node-red": {
         "settings": {
             "flowFile": "flow.json",

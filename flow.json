@@ -1,1 +1,334 @@
-[]
+[
+    {
+        "id": "650e7c81.102bb4",
+        "type": "tab",
+        "label": "Nuki push state changes",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "8982ec9c.9ae2e",
+        "type": "ccu-connection",
+        "z": "",
+        "name": "CCU3",
+        "host": "localhost",
+        "regaEnabled": true,
+        "bcrfEnabled": true,
+        "iprfEnabled": true,
+        "virtEnabled": false,
+        "bcwiEnabled": false,
+        "cuxdEnabled": false,
+        "regaPoll": true,
+        "regaInterval": "10",
+        "rpcPingTimeout": "60",
+        "rpcInitAddress": "127.0.0.1",
+        "rpcServerHost": "127.0.0.1",
+        "rpcBinPort": "2052",
+        "rpcXmlPort": "2053",
+        "queueTimeout": "5000",
+        "queuePause": "250",
+        "contextStore": ""
+    },
+    {
+        "id": "4f8e3104.574f1",
+        "type": "switch",
+        "z": "650e7c81.102bb4",
+        "name": "Door unlocked?",
+        "property": "response.state.state",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "7",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 180,
+        "y": 420,
+        "wires": [
+            [],
+            [],
+            [],
+            [],
+            [
+                "7e70627b.f08c6c"
+            ]
+        ]
+    },
+    {
+        "id": "70048d9c.18f574",
+        "type": "http in",
+        "z": "650e7c81.102bb4",
+        "name": "Nuki Bridge API HTTP Callback Endpoint",
+        "url": "/nuki",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 240,
+        "y": 100,
+        "wires": [
+            [
+                "b292b974.c942e8",
+                "8c2f0346.e870c"
+            ]
+        ]
+    },
+    {
+        "id": "b292b974.c942e8",
+        "type": "http response",
+        "z": "650e7c81.102bb4",
+        "name": "send empty response",
+        "statusCode": "",
+        "headers": {},
+        "x": 560,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "7565f770.71dfc8",
+        "type": "comment",
+        "z": "650e7c81.102bb4",
+        "name": "Get incoming state changes using the Nuki Callback Bridge API",
+        "info": "",
+        "x": 350,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "fd156475.c77da8",
+        "type": "comment",
+        "z": "650e7c81.102bb4",
+        "name": "Request Nuki lock state via Nuki Web API",
+        "info": "",
+        "x": 580,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "578cd7c0.a07468",
+        "type": "comment",
+        "z": "650e7c81.102bb4",
+        "name": "React on the status change",
+        "info": "",
+        "x": 260,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "2feeeaae.f4a326",
+        "type": "http request",
+        "z": "650e7c81.102bb4",
+        "name": "Send Nuki Web API HTTP Get-Request",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": false,
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 240,
+        "y": 280,
+        "wires": [
+            [
+                "cbcd5436.7ca548"
+            ]
+        ]
+    },
+    {
+        "id": "ff07ef80.9321c",
+        "type": "change",
+        "z": "650e7c81.102bb4",
+        "name": "Prepare Nuki Web API HTTP Request https://api.nuki.io/smartlock",
+        "rules": [
+            {
+                "t": "set",
+                "p": "url",
+                "pt": "msg",
+                "to": "\"https://api.nuki.io/smartlock/\" & msg.smartlockId",
+                "tot": "jsonata"
+            },
+            {
+                "t": "delete",
+                "p": "token",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "smartlockId",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 220,
+        "wires": [
+            [
+                "2feeeaae.f4a326"
+            ]
+        ]
+    },
+    {
+        "id": "cbcd5436.7ca548",
+        "type": "change",
+        "z": "650e7c81.102bb4",
+        "name": "Write Nuki lock state to the payload",
+        "rules": [
+            {
+                "t": "set",
+                "p": "response",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "response.state.state",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 280,
+        "wires": [
+            [
+                "6f81deb7.277cc"
+            ]
+        ]
+    },
+    {
+        "id": "6f81deb7.277cc",
+        "type": "function",
+        "z": "650e7c81.102bb4",
+        "name": "Check whether the state changed or not",
+        "func": "var oldNukiStatus = global.get(\"oldNukiStatus\");\n\nif (msg.payload != oldNukiStatus) {\n    global.set(\"oldNukiStatus\", msg.payload);\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 900,
+        "y": 280,
+        "wires": [
+            [
+                "4f8e3104.574f1"
+            ]
+        ]
+    },
+    {
+        "id": "7e70627b.f08c6c",
+        "type": "switch",
+        "z": "650e7c81.102bb4",
+        "name": "Door locked?",
+        "property": "response.state.state",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "4",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 380,
+        "y": 500,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "8c2f0346.e870c",
+        "type": "credentials",
+        "z": "650e7c81.102bb4",
+        "name": "Credentials Nuki Web API",
+        "props": [
+            {
+                "value": "smartlockId",
+                "type": "msg"
+            },
+            {
+                "value": "token",
+                "type": "msg"
+            }
+        ],
+        "x": 190,
+        "y": 220,
+        "wires": [
+            [
+                "c7413f7e.f51cb"
+            ]
+        ]
+    },
+    {
+        "id": "c7413f7e.f51cb",
+        "type": "function",
+        "z": "650e7c81.102bb4",
+        "name": "Request Header set authorization",
+        "func": "msg.headers = {\n    Authorization: \"Bearer \" + msg.token\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 480,
+        "y": 220,
+        "wires": [
+            [
+                "ff07ef80.9321c"
+            ]
+        ]
+    },
+    {
+        "id": "620b3a1.f8968c4",
+        "type": "comment",
+        "z": "650e7c81.102bb4",
+        "name": "Actions to perform when the door gets unlocked",
+        "info": "",
+        "x": 460,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "d179b6dd.dbea38",
+        "type": "comment",
+        "z": "650e7c81.102bb4",
+        "name": "Actions to perform when the door gets locked",
+        "info": "",
+        "x": 650,
+        "y": 500,
+        "wires": []
+    }
+]
