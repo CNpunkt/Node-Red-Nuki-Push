@@ -1,7 +1,7 @@
 {
     "name": "Node-Red-Nuki-Push",
     "description": "Nuki Smart Lock - Push state changes to Node Red",
-    "version": "0.0.1",
+    "version": "1.0.1",
     "dependencies": {
         "node-red-contrib-credentials": "0.2.1"
     },
