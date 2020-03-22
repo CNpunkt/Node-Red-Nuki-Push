@@ -1,5 +1,9 @@
 Node-Red-Nuki-Push
 ==================
+![version](https://img.shields.io/github/package-json/v/CNpunkt/Node-Red-Nuki-Push)
+![size](https://img.shields.io/github/repo-size/CNpunkt/Node-Red-Nuki-Push)
+![issues](https://img.shields.io/github/issues-raw/CNpunkt/Node-Red-Nuki-Push)
+
 This Node-RED flow shows how to react on Nuki Smart Lock state changes via push without constantly polling the API.
 The flow uses the Nuki Bridge API to get the trigger for the changed state and afterwards the Nuki Web API to request the current state for the Nuki Smart Lock.
 <img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Flow%20overview.png"> 
