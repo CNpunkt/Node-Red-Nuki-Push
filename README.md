@@ -58,7 +58,7 @@ The HTTP endpoint will be triggered as soon as the state of the Nuki Smart Lock 
 
 ### Configure the Node-RED flow
 1. The following node will be triggered by the Nuki Bridge using the previously registered callback when the Nuki Smart Lock state changes.
-<img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Triggered%20node.png"
+<img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Triggered%20node.png">
 ![Endpoint node config](https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Endpoint%20node%20config.png "Endpoint node config")
 
 2. Store the smartlockId and the Web API token in the credentials node. The node forwards these informations to the HTTP request node which requests the Nuki Smart Lock state from the Web API.
