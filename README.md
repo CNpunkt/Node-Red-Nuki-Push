@@ -35,8 +35,8 @@ The HTTP endpoint will be triggered as soon as the state of the Nuki Smart Lock 
 3. Send the get-request using the previous URL to the Nuki Bridge. The response should look like this:
 ![Callback registered](https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Callback%20registered.png "Callback registered")
 
-4. (Optional) Check the registered callbacks by sending a request to the Nuki Bridge by using the following URL:
-http://**Nuki Bridge IP address**:**Port**/callback/list?token=**API token**
+4. (Optional) Check the registered callbacks by sending a request to the Nuki Bridge by using the following URL: http://**Nuki Bridge IP address**:**Port**/callback/list?token=**API token**
+
 ![Callback list](https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Callback%20list.png "Callback list")
 
 
@@ -58,6 +58,7 @@ http://**Nuki Bridge IP address**:**Port**/callback/list?token=**API token**
 
 ### Configure the Node-RED flow
 1. The following node will be triggered by the Nuki Bridge using the previously registered callback when the Nuki Smart Lock state changes.
+
 ![Triggered node](https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Triggered%20node.png "Triggered node")
 ![Endpoint node config](https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Endpoint%20node%20config.png "Endpoint node config")
 
