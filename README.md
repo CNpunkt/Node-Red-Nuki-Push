@@ -70,3 +70,8 @@ The HTTP endpoint will be triggered as soon as the state of the Nuki Smart Lock 
 <img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Credentials%20node.png">
 <img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Credentials%20node%20config.png">
 
+
+
+## Credits
+Created by Christian Niehaves. If you would like to get into contact you can do so via:
+- [Christian Niehaves on LinkedIn](https://www.linkedin.com/in/christianniehaves/)
