@@ -74,4 +74,5 @@ The HTTP endpoint will be triggered as soon as the state of the Nuki Smart Lock 
 
 ## Credits
 Created by Christian Niehaves. If you would like to get into contact you can do so via:
-- [Christian Niehaves on LinkedIn](https://www.linkedin.com/in/christianniehaves/)
+- [LinkedIn](https://www.linkedin.com/in/christianniehaves/)
+- [Twitter](https://twitter.com/CNpunkt)
