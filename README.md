@@ -30,7 +30,7 @@ The flow uses the Nuki Bridge API to get the trigger for the changed state and a
 ### Register a callback HTTP endpoint in the Nuki Bridge
 The HTTP endpoint will be triggered as soon as the state of the Nuki Smart Lock changes. With the following steps a Node-RED HTTP endpoint will be registered in the Nuki Bridge.
 
-1. Download any preferred tool for sending a HTTP request, for example [Postman](https://www.postman.com/)
+1. Download any preferred tool for sending a HTTP request, for example [Postman](https://bit.ly/3ggPIId)
 
 2. Build the URL for the request using the informations of step 2 (see above) to register the callback endpoint in the Nuki Bridge:
  - http://**Nuki Bridge IP address**:**Port**/callback/add?url=http%3A%2F%2F**Node-RED IP address**%2Fnuki&token=**API token**
@@ -45,7 +45,7 @@ The HTTP endpoint will be triggered as soon as the state of the Nuki Smart Lock 
 
 
 ### Activate the Nuki Web API
-1. Open [https://web.nuki.io/](https://web.nuki.io/) and create an account
+1. Open [https://web.nuki.io/](https://bit.ly/36ofmpS) and create an account
 
 2. Open the API section on the website and create a new API token
 <img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Generate%20Web%20API%20Token.png">
@@ -60,7 +60,7 @@ The HTTP endpoint will be triggered as soon as the state of the Nuki Smart Lock 
 
 
 ### Configure the Node-RED flow
-1. Copy the [flow](https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/flow.json) to your Node-RED instance
+1. Copy the [flow](https://bit.ly/3bRNJXm) to your Node-RED instance
 
 2. The following node will be triggered by the Nuki Bridge using the previously registered callback when the Nuki Smart Lock state changes.
 <img src="https://github.com/CNpunkt/Node-Red-Nuki-Push/blob/master/Ressources/Images/Triggered%20node.png">
@@ -74,5 +74,5 @@ The HTTP endpoint will be triggered as soon as the state of the Nuki Smart Lock 
 
 ## Credits
 Created by Christian Niehaves. If you would like to get into contact you can do so via:
-- [LinkedIn](https://www.linkedin.com/in/christianniehaves/)
-- [Twitter](https://twitter.com/CNpunkt)
+- [LinkedIn](https://bit.ly/2TyiHgW)
+- [Twitter](https://bit.ly/2LWwVUo)
